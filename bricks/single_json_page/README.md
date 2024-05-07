@@ -9,11 +9,8 @@ A brick that generates a single WF or a BFF page.
 | Variable             | Description                                  | Default      | Type     |
 | -------------------- | -------------------------------------------- | ------------ | -------- |
 | `page_type`          | Name of the page type                        | wf           | `enum`   |
-| -------------------- | ------------------------------               | ------------ | -------- |
 | `step_number`        | Step number to be shown                      | 0            | `number` |
-| -------------------- | ------------------------------               | ------------ | -------- |
 | `page_template_name` | Options to generate different page templates | Default      | `enum`   |
-| -------------------- | ------------------------------               | ------------ | -------- |
 | `page_name`          | Name of the page to be created               | test_feature | `string` |
 
 ## How to use 🚀
