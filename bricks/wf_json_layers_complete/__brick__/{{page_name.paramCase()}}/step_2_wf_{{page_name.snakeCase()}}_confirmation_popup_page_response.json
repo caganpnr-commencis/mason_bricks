@@ -1,0 +1,23 @@
+{
+    "name": "{{page_name.paramCase()}}-confirmation-popup-page",
+    "page": {
+      "type": "neo_popup",
+      "args": {
+        "type": "NeoPopupType.warning",
+        "titleText": "An example confirmation title",
+        "bodyText": "An example body text",
+        "actions": [
+          {
+            "dismissOnAction": true,
+            "labelText": "Confirmation button label",
+            "transitionId": ""
+          },
+          {
+            "labelText": "Cancel button label",
+            "displayMode": "line",
+            "transitionId": ""
+          }
+        ]
+      }
+    }
+  }

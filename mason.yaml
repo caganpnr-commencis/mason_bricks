@@ -1,0 +1,5 @@
+bricks:
+  wf_json_layers_complete:
+    path: bricks/wf_json_layers_complete
+  single_json_page:
+    path: bricks/single_json_page

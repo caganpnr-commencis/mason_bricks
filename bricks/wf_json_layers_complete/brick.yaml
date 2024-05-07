@@ -1,0 +1,14 @@
+name: wf_json_layers_complete
+description: A brick that generates everything you need to get started to a new workflow page.
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0-dev.53 <0.1.0"
+
+vars:
+  page_name:
+    type: string
+    description: Name of the page
+    default: test_feature
+    prompt: Please enter a page name you want to create.

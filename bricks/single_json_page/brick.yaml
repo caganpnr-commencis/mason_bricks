@@ -1,0 +1,38 @@
+name: single_json_page
+description: A brick that generates a single WF or a BFF page.
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0-dev.53 <0.1.0"
+
+vars:
+  page_type:
+    type: enum
+    description: Choose a page type
+    values:
+      - wf
+      - bff
+    prompt: Select a page type for your page.
+
+  step_number:
+    type: number
+    description: Select an option if the page should have a step number.
+    default: 0
+    prompt: Should this page have a step number? If yes, what is it? (You can leave it blank if no)
+
+  page_template_name:
+    type: enum
+    description: Select a page template option
+    values:
+      - Default
+      - Popup Page
+      - Success End Page
+      - Failure End Page
+    prompt: Select a page template option.
+
+  page_name:
+    type: string
+    description: Name of the page
+    default: test_feature
+    prompt: Please enter a page name you want to create.
