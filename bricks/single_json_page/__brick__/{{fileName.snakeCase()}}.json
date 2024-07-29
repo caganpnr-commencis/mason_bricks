@@ -78,10 +78,12 @@
         ]
       }
   }{{/isPopup}}{{#isSuccess}}{
-    "type": "neo_scaffold",
+    "type": "neo_flow_completion_page",
     "args": {
-      "enableDeviceBack": true,
       "useSafeArea": true,
+      "rebuildWhenPopped": true,
+      "backWidgetEventKey": "globalNavigationPopUntil",
+      "backWidgetEventValue": "home",
       "appBar": {
         "type": "neo_app_bar",
         "args": {
@@ -92,88 +94,66 @@
               "args": {
                 "iconUrn": "urn:local:icons:close_24px:svg",
                 "navigationPath": "home",
-                "navigationType": "NeoNavigationType.push-as-root"
+                "navigationType": "NeoNavigationType.pop-until"
               }
             }
           ]
         }
       },
-      "body": {
-        "type": "column",
+      "content": {
+        "type": "neo_flow_completion_card",
         "args": {
-          "crossAxisAlignment": "stretch",
-          "children": [
+          "image": {
+            "type": "neo_image",
+            "args": {
+              "imageUrn": "urn:local:images:debit_success_image:svg",
+              "showGridBackground": true
+            }
+          },
+          "titleText": {
+            "type": "neo_text",
+            "args": {
+              "text": "An example card title",
+              "textAlign": "center",
+              "textColor": "NeoTheme.neutralForeground1Rest",
+              "style": "labelEighteenSemibold"
+            }
+          },
+          "descriptionTextList": [
             {
-              "type": "expanded",
+              "type": "neo_text",
               "args": {
-                "child": {
-                  "type": "single_child_scroll_view",
-                  "args": {
-                    "child": {
-                      "type": "neo_flow_completion_card",
-                      "args": {
-                        "padding": {
-                          "top": 20,
-                          "start": 24,
-                          "end": 24
-                        },
-                        "image": {
-                          "type": "neo_image",
-                          "args": {
-                            "imageUrn": "urn:local:images:success_image:svg",
-                            "showGridBackground": true
-                          }
-                        },
-                        "titleText": {
-                          "type": "neo_text",
-                          "args": {
-                            "text": "profileAndSettings_otherDocumentTransactionsSuccessPage_email_title",
-                            "textAlign": "center",
-                            "textColor": "NeoColors.textDefault",
-                            "style": "labelEighteenSemibold"
-                          }
-                        },
-                        "descriptionTextList": [
-                          {
-                            "type": "neo_text",
-                            "args": {
-                              "text": "profileAndSettings_otherDocumentTransactionsSuccessPage_info_text",
-                              "textAlign": "center",
-                              "textColor": "NeoColors.textSecondary",
-                              "style": "labelFourteenMedium"
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            {
-              "type": "neo_button",
-              "args": {
-                "navigationPath": "home",
-                "navigationType": "NeoNavigationType.push-as-root",
-                "labelText": "general_returnDashboard_button",
-                "size": "NeoButtonSize.large",
-                "padding": {
-                  "top": 12,
-                  "bottom": 20,
-                  "start": 24,
-                  "end": 24
-                }
+                "text": "Example card description",
+                "textAlign": "center",
+                "textColor": "NeoTheme.neutralForeground2Rest",
+                "style": "labelFourteenMedium"
               }
             }
           ]
         }
-      }
+      },
+      "buttonList": [
+        {
+          "type": "neo_button",
+          "args": {
+            "navigationPath": "home",
+            "navigationType": "NeoNavigationType.push-as-root",
+            "labelText": "general_returnDashboard_button",
+            "size": "NeoButtonSize.large"
+          }
+        }
+      ],
+      "padding": [
+        24,
+        20
+      ]
     }
   }{{/isSuccess}}{{#isFailure}}{
-    "type": "neo_scaffold",
+    "type": "neo_flow_completion_page",
     "args": {
-      "enableDeviceBack": true,
-      "useSafeArea": true,
+      "backWidgetEventKey": "globalNavigationPopUntil",
+      "backWidgetEventValue": "home",
+      "rebuildWhenPopped": true,
       "appBar": {
         "type": "neo_app_bar",
         "args": {
@@ -184,82 +164,66 @@
               "args": {
                 "iconUrn": "urn:local:icons:close_24px:svg",
                 "navigationPath": "home",
-                "navigationType": "NeoNavigationType.push-as-root"
+                "navigationType": "NeoNavigationType.pop-until"
               }
             }
           ]
         }
       },
-      "body": {
+      "content": {
         "type": "column",
         "args": {
-          "crossAxisAlignment": "stretch",
           "children": [
             {
-              "type": "expanded",
+              "type": "neo_flow_completion_card",
               "args": {
-                "child": {
-                  "type": "single_child_scroll_view",
+                "image": {
+                  "type": "neo_image",
                   "args": {
-                    "child": {
-                      "type": "neo_flow_completion_card",
-                      "args": {
-                        "padding": {
-                          "top": 20,
-                          "start": 24,
-                          "end": 24
-                        },
-                        "image": {
-                          "type": "neo_image",
-                          "args": {
-                            "imageUrn": "urn:local:images:debit_succes_error_image:svg",
-                            "showGridBackground": true
-                          }
-                        },
-                        "titleText": {
-                          "type": "neo_text",
-                          "args": {
-                            "text": "An example failure title",
-                            "textAlign": "center",
-                            "textColor": "NeoColors.textDefault",
-                            "style": "labelEighteenSemibold"
-                          }
-                        },
-                        "descriptionTextList": [
-                          {
-                            "type": "neo_text",
-                            "args": {
-                              "text": "An example failure description",
-                              "textAlign": "center",
-                              "textColor": "NeoColors.textSecondary",
-                              "style": "labelFourteenMedium"
-                            }
-                          }
-                        ]
-                      }
+                    "imageUrn": "urn:local:images:debit_fail_image:svg",
+                    "showGridBackground": true
+                  }
+                },
+                "titleText": {
+                  "type": "neo_text",
+                  "args": {
+                    "text": "Example card title",
+                    "textAlign": "center",
+                    "textColor": "NeoTheme.neutralForeground1Rest",
+                    "style": "labelEighteenSemibold"
+                  }
+                },
+                "descriptionTextList": [
+                  {
+                    "type": "neo_text",
+                    "args": {
+                      "text": "Example card description",
+                      "textAlign": "center",
+                      "textColor": "NeoTheme.neutralForeground2Rest",
+                      "style": "labelFourteenMedium"
                     }
                   }
-                }
-              }
-            },
-            {
-              "type": "neo_button",
-              "args": {
-                "navigationPath": "home",
-                "navigationType": "NeoNavigationType.push-as-root",
-                "labelText": "general_returnDashboard_button",
-                "size": "NeoButtonSize.large",
-                "padding": {
-                  "top": 12,
-                  "bottom": 20,
-                  "start": 24,
-                  "end": 24
-                }
+                ]
               }
             }
           ]
         }
-      }
+      },
+      "buttonList": [
+        {
+          "type": "neo_button",
+          "args": {
+            "navigationPath": "home",
+            "navigationType": "NeoNavigationType.push-as-root",
+            "labelText": "general_returnDashboard_button",
+            "size": "NeoButtonSize.large"
+          }
+        }
+      ],
+      "padding": [
+        24,
+        20
+      ]
     }
   }{{/isFailure}}
 }
